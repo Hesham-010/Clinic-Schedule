@@ -8,8 +8,7 @@ import { Doctor } from 'src/doctor/entities/doctor.entity';
 import { ServiceSchedules } from 'src/services/entities/service-schedule.entity';
 import { Service } from 'src/services/entities/service.entity';
 import { Appointment } from './entities/appointment.entity';
-import { AvailabilityDto } from './dto/availability.dto';
-import { Sequelize } from 'sequelize-typescript';
+import { SlotDto } from './dto/slot.dto';
 import { DaysEnum } from 'src/utils/enums/schedule.enum';
 import { Op } from 'sequelize';
 import { minutesToTime, timeToMinutes } from 'src/utils/enums/parse-time';
@@ -30,7 +29,7 @@ export class AppointmentService {
     @InjectModel(Appointment) private appointmentModel: typeof Appointment,
   ) {}
 
-  async getSlots(dto: AvailabilityDto) {
+  async getSlots(dto: SlotDto) {
     const { clinicId, serviceId, date } = dto;
 
     // Check if clinic exist

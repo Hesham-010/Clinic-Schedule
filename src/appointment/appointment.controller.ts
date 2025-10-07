@@ -1,13 +1,13 @@
 import { Body, Controller, Get } from '@nestjs/common';
 import { AppointmentService } from './appointment.service';
-import { AvailabilityDto } from './dto/availability.dto';
+import { SlotDto } from './dto/slot.dto';
 
 @Controller('appointment')
 export class AppointmentController {
   constructor(private readonly appointmentService: AppointmentService) {}
 
   @Get('slots')
-  async getSlots(@Body() dto: AvailabilityDto) {
+  async getSlots(@Body() dto: SlotDto) {
     return this.appointmentService.getSlots(dto);
   }
 }

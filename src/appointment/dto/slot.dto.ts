@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsNumber } from 'class-validator';
 
-export class AvailabilityDto {
+export class SlotDto {
   @IsNumber()
   @IsNotEmpty()
   clinicId: number;
