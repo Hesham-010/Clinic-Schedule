@@ -22,4 +22,13 @@ export class Service extends Model<Service> {
 
   @BelongsToMany(() => Clinic, () => ClinicServices)
   declare clinics: Clinic[];
+
+  @Column({ type: DataType.INTEGER, allowNull: false, defaultValue: 30 })
+  declare slotMinutes: number;
+
+  @Column({ type: DataType.BOOLEAN, allowNull: false, defaultValue: true })
+  declare requiresDoctor: boolean;
+
+  @Column({ type: DataType.BOOLEAN, allowNull: false, defaultValue: false })
+  declare parallel: boolean;
 }

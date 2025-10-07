@@ -6,7 +6,6 @@ import {
 import { InjectModel } from '@nestjs/sequelize';
 import { Service } from '../entities/service.entity';
 import { CreateServiceDto } from '../dto/create-service.dto';
-import { UpdateServiceDto } from '../dto/update-service.dto';
 
 @Injectable()
 export class ServicesService {
@@ -40,19 +39,6 @@ export class ServicesService {
       throw new NotFoundException(`Service not found`);
     }
     return `This action returns a #${id} service`;
-  }
-
-  async update(id: number, updateServiceDto: UpdateServiceDto) {
-    // Get Service By id
-    const service = await this.serviceModel.findByPk(id);
-
-    if (!service) {
-      throw new NotFoundException(`Service not found`);
-    }
-
-    //Update Service
-    await service.update(updateServiceDto);
-    return `Service updated successfully`;
   }
 
   async remove(id: number) {

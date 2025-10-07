@@ -1,15 +1,6 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
 import { ServicesService } from '../services/services.service';
 import { CreateServiceDto } from '../dto/create-service.dto';
-import { UpdateServiceDto } from '../dto/update-service.dto';
 
 @Controller('services')
 export class ServicesController {
@@ -23,11 +14,6 @@ export class ServicesController {
   @Get()
   findAll() {
     return this.servicesService.findAll();
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateServiceDto: UpdateServiceDto) {
-    return this.servicesService.update(+id, updateServiceDto);
   }
 
   @Delete(':id')

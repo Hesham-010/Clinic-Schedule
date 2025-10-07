@@ -9,6 +9,7 @@ import { Service } from 'src/services/entities/service.entity';
 import { ClinicServices } from 'src/clinic/entities/clinic-services.entity';
 import { ServiceSchedules } from 'src/services/entities/service-schedule.entity';
 import { DoctorSchedules } from 'src/doctor/entities/doctor-schedule.entity';
+import { Appointment } from 'src/appointment/entities/appointment.entity';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { DoctorSchedules } from 'src/doctor/entities/doctor-schedule.entity';
           ClinicServices,
           ServiceSchedules,
           DoctorSchedules,
+          Appointment,
         ],
         autoLoadModels: true,
         synchronize: true,

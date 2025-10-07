@@ -23,8 +23,6 @@ export class ClinicRegisterDto {
 
   @IsString()
   @IsNotEmpty()
-  @Min(6)
-  @Min(16)
   password: string;
 
   @IsString()
